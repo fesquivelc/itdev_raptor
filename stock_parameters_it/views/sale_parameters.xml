@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_parameters_form" model="ir.ui.view">
+            <field name="name">stock.parameters.form</field>
+            <field name="model">stock.parameters.it</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Parámetros de inventarios" create="false" delete="false">
+                    <notebook>
+                        <page string="Inventario">
+                            <group>
+                                <field name="default_product_followers" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="stock_parameters_tree" model="ir.ui.view">
+            <field name="name">stock.parameters.tree</field>
+            <field name="model">stock.parameters.it</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Main Parameter" create="false" delete="false">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_stock_parameters" model="ir.actions.act_window">
+            <field name="name">Parametros</field>
+            <field name="res_model">stock.parameters.it</field>
+            <field name="view_id" ref="stock_parameters_tree"/>
+            <field name="type">ir.actions.act_window</field>
+            <field name="sequence" eval="1"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="search_view_id" ref="account_move_line_book_search"/> -->
+        </record>
+
+        <menuitem
+                action="action_stock_parameters"
+                id="menu_stock_parameters"
+                parent="stock.menu_stock_config_settings" sequence="100"/>
+
+    </data>
+</odoo>
