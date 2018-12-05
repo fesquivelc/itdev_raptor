@@ -6,7 +6,6 @@ class ProjectTemplate(models.Model):
     _name = 'project.template'
 
     name = fields.Char(u'Nombre de plantilla')
-    planned_hours = fields.Float()
     template_line_ids = fields.One2many('project.template.line', 'template_id', u'Detalle de plantilla')
     stage_ids = fields.One2many('project.template.stage', 'template_id', u'Etapas')
 
@@ -18,6 +17,7 @@ class ProjectTemplateLine(models.Model):
     template_id = fields.Many2one('project.template', u'Plantilla')
     stage_id = fields.Many2one('project.template.stage', u'Etapa', required=True)
     task_id = fields.Many2one('project.template.task', u'Tarea')
+    planned_hours = fields.Float(u'Horas planificadas')
 
 
 class ProjectTemplateStage(models.Model):

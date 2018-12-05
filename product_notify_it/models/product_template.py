@@ -23,7 +23,7 @@ class ProductTemplate(models.Model):
                 'res_model': 'product.template',
                 'res_id': product.id,
                 'partner_ids': [(6, False, partner_ids)],
-                'message': "<p>Se ha creado un nuevo producto: {} y se le ha agregado como seguidor.</p>".format(
+                'message': "<p>Se ha creado un nuevo producto de nombre: <strong>{}</strong> y se le ha agregado como seguidor.</p>".format(
                     product.name),
                 'send_mail': True
 

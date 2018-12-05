@@ -10,22 +10,6 @@
             </field>
         </record>
 
-        <!--<record id="project_budget_line_tree" model="ir.ui.view">
-            <field name="name">biosis.project.budget.line.tree</field>
-            <field name="model">biosis.project.budget.line</field>
-            <field name="arch" type="xml">
-                <tree string="Presupuesto">
-                    <field name="presupuesto_id"/>
-                    <field name="tarea_id"/>
-                    <field name="stage_id"/>
-                    <field name="producto_id"/>
-                    <field name="cantidad"/>
-                    <field name="subtotal"/>
-
-                </tree>
-            </field>
-        </record> -->
-
         <record id="project_template_form" model="ir.ui.view">
             <field name="name">project.template.form</field>
             <field name="model">project.template</field>
@@ -42,8 +26,9 @@
                                     <tree editable="bottom">
                                         <field name="sequence" widget="handle"/>
                                         <field name="template_id" invisible="1" />
-                                        <field name="stage_id" domain="[('template_id','=',template_id)]" context="{'default_template_id': template_id}" />
-                                        <field name="task_id" domain="[('template_id','=',template_id)]" context="{'default_template_id': template_id}" />
+                                        <field name="stage_id" domain="[('template_id','=',template_id)]" />
+                                        <field name="task_id" domain="[('template_id','=',template_id)]" attrs="{'readonly': [('stage_id','=',False)]}" />
+                                        <field name="planned_hours" widget="float_time" attrs="{'readonly': ['|',('task_id','=',False),('stage_id','=',False)]}" />
                                     </tree>
                                 </field>
                             </page>
