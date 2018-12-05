@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': u"Parámetros de inventario",
+    'name': u"Multiples ubicaciones por compra",
 
     'summary': u"""
-        Parámetros de configuración para inventario""",
+        Permite definir múltiples ubicaciones de destino por línea de compra""",
 
     'description': """
         Long description of module's purpose

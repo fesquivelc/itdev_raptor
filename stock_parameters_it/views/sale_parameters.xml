@@ -31,7 +31,7 @@
         </record>
 
         <record id="action_stock_parameters" model="ir.actions.act_window">
-            <field name="name">Parametros</field>
+            <field name="name">Parámetros de creación</field>
             <field name="res_model">stock.parameters.it</field>
             <field name="view_id" ref="stock_parameters_tree"/>
             <field name="type">ir.actions.act_window</field>
@@ -44,7 +44,7 @@
         <menuitem
                 action="action_stock_parameters"
                 id="menu_stock_parameters"
-                parent="stock.menu_stock_config_settings" sequence="100"/>
+                parent="stock.menu_product_in_config_stock" sequence="0"/>
 
     </data>
 </odoo>
