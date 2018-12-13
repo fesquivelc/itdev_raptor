@@ -53,10 +53,15 @@
             </field>
         </record>
 
-        <menuitem name="Plantillas de proyecto"
+        <menuitem name="Plantillas"
+                  id="mnu_project_template_root"
+                  parent="project.menu_project_config"
+                  sequence="0"/>
+
+        <menuitem name="Proyecto"
                   id="mnu_project_template"
                   action="action_project_template"
-                  parent="project.menu_project_config"
+                  parent="mnu_project_template_root"
                   sequence="0"/>
     </data>
 </odoo>
