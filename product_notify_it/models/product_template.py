@@ -14,7 +14,7 @@ class ProductTemplate(models.Model):
 
         return ret
 
-    def add_default_followers(self,product):
+    def add_default_followers(self, product):
         parameters = self.env.ref('stock_parameters_it.stock_parameters_values')
         partner_ids = parameters.default_product_followers.mapped('partner_id').ids
         if partner_ids:
