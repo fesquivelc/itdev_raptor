@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="crm_team_view_form" model="ir.ui.view">
+            <field name="name">crm.team.view.form</field>
+            <field name="model">crm.team</field>
+            <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+            <field name="arch" type="xml">
+                <page name="more_info" position="inside">
+                    <group string="Secuencias">
+                        <field name="sequence_prefix"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>
