@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Restricción de documentos por usuarios",
+    'name': u"Restricción de documentos por usuarios",
 
-    'summary': """
+    'summary': u"""
         Restringe documentos para que solo el usuario que los ha creado pueda visualizarlos""",
 
     'description': """
