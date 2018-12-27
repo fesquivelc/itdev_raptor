@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "user_documents_security_it",
+    'name': "Restricción de documentos por usuarios",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Restringe documentos para que solo el usuario que los ha creado pueda visualizarlos""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "ITGroup",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -20,13 +19,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'sale', 'purchase', 'purchase_requisition'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/user_document_security.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -9,13 +9,37 @@
         <field name="name">Forzar solo documentos por usuario</field>
         <field name="comment">Solo puede acceder a los datos de ventas, facturas de cliente/proveedor que haya creado</field>
         <field name="category_id" ref="module_category_user_document"/>
-        <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
     </record>
 
+    <record id="sale_order_personal_rule" model="ir.rule">
+        <field name="name">Personal Orders</field>
+        <field ref="sale.model_sale_order" name="model_id"/>
+        <field name="domain_force">[('create_uid','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_user_document'))]"/>
+    </record>
 
+    <record id="account_invoice_personal_rule" model="ir.rule">
+        <field name="name">Personal Invoices</field>
+        <field ref="account.model_account_invoice" name="model_id"/>
+        <field name="domain_force">[('create_uid','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_user_document'))]"/>
+    </record>
 
-    <record id="user_document_security" model="res.groups">
+    <record id="purchase_order_personal_rule" model="ir.rule">
+        <field name="name">Personal Purchases</field>
+        <field ref="purchase.model_purchase_order" name="model_id"/>
+        <field name="domain_force">[('create_uid','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_user_document'))]"/>
+    </record>
+
+    <record id="purchase_requisition_personal_rule" model="ir.rule">
+        <field name="name">Personal purchase requisition</field>
+        <field ref="purchase_requisition.model_purchase_requisition" name="model_id"/>
+        <field name="domain_force">[('create_uid','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_user_document'))]"/>
+    </record>
+
+    <!--<record id="user_document_security" model="res.groups">
         <field name="name">Solo mostrar documentos por usuario</field>
-
-    </record>
+    </record>-->
 </odoo>
