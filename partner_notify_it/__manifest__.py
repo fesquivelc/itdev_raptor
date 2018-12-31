@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': u"Parámetros de configuración",
+    'name': "Agregar seguidores contacto",
 
-    'summary': u"""
-        Permite definir múltiples ubicaciones de destino por línea de compra""",
+    'summary': """
+        Permite que se agreguen seguidores por defecto al crear un contacto nuevo
+        cliente/proveedor""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "IT Grupo",
+    'author': "ITGrupo",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -19,14 +20,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock'],
+    'depends': ['base', 'stock_parameters_it'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/sale_parameters.xml',
-        'views/partner_parameters.xml',
-        'data/sale_parameters.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

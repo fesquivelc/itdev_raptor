@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="partner_parameters_form" model="ir.ui.view">
+            <field name="name">partner.parameters.form</field>
+            <field name="model">partner.parameters.it</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Parámetros de cliente/proveedor" create="false" delete="false">
+                    <notebook>
+                        <page string="Creación">
+                            <group>
+                                <field name="default_partner_followers" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="partner_parameters_tree" model="ir.ui.view">
+            <field name="name">partner.parameters.tree</field>
+            <field name="model">partner.parameters.it</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Main Parameter" create="false" delete="false">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_partner_parameters" model="ir.actions.act_window">
+            <field name="name">Parámetros de creación</field>
+            <field name="res_model">partner.parameters.it</field>
+            <field name="view_id" ref="partner_parameters_tree"/>
+            <field name="type">ir.actions.act_window</field>
+            <field name="sequence" eval="1"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="search_view_id" ref="account_move_line_book_search"/> -->
+        </record>
+
+        <menuitem id="menu_partner_parameters_root"
+                  name="Clientes/Proveedores"
+                    parent="stock.menu_stock_config_settings" sequence="40"/>
+
+        <menuitem
+                action="action_partner_parameters"
+                id="menu_partner_parameters"
+                parent="menu_partner_parameters_root" sequence="0"/>
+
+    </data>
+</odoo>

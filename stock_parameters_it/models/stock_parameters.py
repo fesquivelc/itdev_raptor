@@ -12,3 +12,10 @@ class StockConfiguration(models.Model):
     name = fields.Char('Nombre', size=50, default=u'Parámetros de venta')
     default_product_followers = fields.Many2many('res.users', 'rel_def_followers_users',
                                                  string=u'Seguidores de producto')
+
+class PartnerConfiguration(models.Model):
+    _name = 'partner.parameters.it'
+
+    name = fields.Char('Nombre', size=50, default=u'Parámetros de cliente/proveedor')
+    default_partner_followers = fields.Many2many('res.users', 'rel_def_partner_followers_users',
+                                                 string=u'Seguidores de contactos')
